@@ -183,7 +183,7 @@ def parseX(cash):
     try:
         x = int(cash)
         if not(1 <= x and x <= n):
-            print("WRONG COMMAND! X SHOULD BE FROM 1 to n, BUT ", x, "FOUND!")
+            print("WRONG COMMAND! X SHOULD BE FROM 1 to", n, ", BUT ", x, "FOUND!")
             return 0
     except ValueError:
         print("WRONG COMMAND! X MUST BE A NUMBER!")
@@ -195,7 +195,7 @@ def parseY(cash):
     try:
         y = int(cash)
         if not(1 <= y and y <= m):
-            print("WRONG COMMAND! Y SHOULD BE FROM 1 to m, BUT ", m, "FOUND!")
+            print("WRONG COMMAND! Y SHOULD BE FROM 1 to ", m, ", BUT ", m, "FOUND!")
             return 0
     except ValueError:
         print("WRONG COMMAND! Y MUST BE A NUMBER!")
@@ -248,7 +248,9 @@ def doOpenStep(x, y):
     return 0
 
 def doStep():
-    print("Enter X, Y, Action: X should be from 1 to n, Y should be from 1 to m, Action = Open or Flag")
+    global n
+    global m
+    print("Enter X, Y, Action: X should be from 1 to", n, ", Y should be from 1 to", m, ", Action = Open or Flag")
     tmp = input().split(' ')
     if len(tmp) != 3:
         print("WRONG COMMAND! SHOULD BE 3 Parametrs!")
